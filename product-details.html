@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تفاصيل المنتج - Next Store</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      .product-details {
+        max-width: 1200px;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .product-details img {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid #f0f0f0;
+        object-fit: cover;
+      }
+
+      .product-info h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #000;
+      }
+
+      .product-info p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+
+      .product-price {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: #000;
+      }
+
+      .options {
+        margin-bottom: 1.5rem;
+      }
+
+      .options label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .options select {
+        padding: 0.5rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+
+      .size-options {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .size-btn {
+        padding: 0.7rem 1.2rem;
+        border-radius: 10px;
+        border: 2px solid #ccc;
+        background: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .size-btn:hover {
+        border-color: #000;
+        transform: scale(1.05);
+      }
+
+      .size-btn.active {
+        background: #000;
+        color: #fff;
+        border-color: #000;
+      }
+
+      .size-btn.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .color-options {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .color-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 3px solid #ccc;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .color-btn:hover,
+      .color-btn.active {
+        border: 3px solid #000;
+        transform: scale(1.1);
+      }
+
+      .btn-buy {
+        display: inline-block;
+        background-color: #000;
+        color: #fff;
+        padding: 1rem 2.5rem;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+        border: 1px solid #000;
+      }
+
+      .btn-buy:hover {
+        background-color: #fff;
+        color: #000;
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .product-details {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .color-options {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar top">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li><a href="#contact">اتصل بنا</a></li>
+          <li><a href="index.html#about">من نحن</a></li>
+          <li><a href="index.html#products">تيشيرتات</a></li>
+          <li><a href="index.html#">الرئيسية</a></li>
+        </ul>
+
+        <button class="nav-toggle" aria-label="فتح القائمة">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <div class="logo">
+          <img 
+          src="./img/logo.png" 
+          alt="Logo"
+          onclick="window.location.href='index.html#'" 
+          />
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Product Details Section -->
+    <section class="product-details">
+      <div>
+        <img
+          src="./img/attack-on-titan-t-shirt.png"
+          alt="تيشيرت هجوم العمالقة"
+        />
+      </div>
+      <div class="product-info">
+        <h1>تيشيرت هجوم العمالقة</h1>
+        <p>
+          تيشيرت بجودة عالية مع تصميم أنيق مستوحى من أنمي هجوم العمالقة. مصنوع
+          من قماش قطني مريح ومناسب للاستخدام اليومي.
+        </p>
+
+        <!-- المقاس -->
+        <div class="options">
+          <label>اختر المقاس:</label>
+          <div class="size-options">
+            <button class="size-btn active" data-size="S">S</button>
+            <button class="size-btn" data-size="M">M</button>
+            <button class="size-btn" data-size="L">L</button>
+            <button class="size-btn disabled" data-size="XL" disabled>
+              XL
+            </button>
+          </div>
+        </div>
+
+        <!-- الألوان -->
+        <div class="options">
+          <label>اختر اللون:</label>
+          <div class="color-options">
+            <div
+              class="color-btn active"
+              style="background-color: black"
+              data-color="أسود"
+            ></div>
+            <div
+              class="color-btn"
+              style="background-color: white"
+              data-color="أبيض"
+            ></div>
+          </div>
+        </div>
+
+        <div class="product-price">25 SAR</div>
+        <a
+          id="whatsapp-link"
+          href="https://wa.me/966500000000?text=اريد%20شراء%20تيشيرت%20هجوم%20العمالقة"
+          target="_blank"
+          class="btn-buy"
+          >اطلب عبر واتساب</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>متجر نكست</h3>
+          <p>
+            نقدّم لك أفضل خامات القطن مع تصاميم عصرية لتجمع بين الراحة والأناقة.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html#">الرئيسية</a></li>
+            <li><a href="index.html#products">تيشيرتات</a></li>
+            <li><a href="index.html#about">من نحن</a></li>
+            <li><a href="index.html#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>تواصل معنا</h4>
+          <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
+          <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
+        </div>
+        <div class="footer-col">
+          <h4>تابعنا</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script>
+      const colorBtns = document.querySelectorAll(".color-btn");
+      const sizeBtns = document.querySelectorAll(".size-btn");
+      const whatsappLink = document.getElementById("whatsapp-link");
+
+      // اختيار اللون
+      colorBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          colorBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          updateWhatsappLink();
+        });
+      });
+
+      // اختيار المقاس
+      sizeBtns.forEach((btn) => {
+        if (!btn.disabled) {
+          btn.addEventListener("click", () => {
+            sizeBtns.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            updateWhatsappLink();
+          });
+        }
+      });
+
+      // تحديث رابط واتساب
+      function updateWhatsappLink() {
+        const size = document.querySelector(".size-btn.active").dataset.size;
+        const color = document.querySelector(".color-btn.active").dataset.color;
+        const base =
+          "https://wa.me/966500000000?text=اريد%20شراء%20تيشيرت%20هجوم%20العمالقة";
+        whatsappLink.href = `${base}%20مقاس:${size}%20لون:${color}`;
+      }
+
+      // تحديث أولي
+      updateWhatsappLink();
+    </script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Next Store - متجر نكست</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar top">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li><a href="#contact">اتصل بنا</a></li>
+          <li><a href="index.html#about">من نحن</a></li>
+          <li><a href="index.html#products">تيشيرتات</a></li>
+          <li><a href="index.html#">الرئيسية</a></li>
+        </ul>
+
+        <button class="nav-toggle" aria-label="فتح القائمة">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <div class="logo">
+          <img
+            src="./img/logo.png"
+            alt="Logo"
+            onclick="window.location.href='index.html#'"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero container">
+      <img src="./img/hero.png" class="hero-img" alt="" loading="lazy" />
+      <img src="./img/hero_2.png" class="hero-img-2" alt="" loading="lazy" />
+      <a href="#products" class="btn">صمّم تيشيرتك... بطريقتك!</a>
+
+      <a href="#products" class="scroll-down">
+        <i class="fa-solid fa-angle-down"></i>
+      </a>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products container">
+      <hr />
+
+      <!-- <h2>Our Collection</h2> -->
+      <div class="product-grid">
+        <div
+          class="product-card Customize-card"
+          onclick="window.location.href='customize-details.html'"
+        >
+          <img src="./img/Customize-t-shirt.png" alt="" loading="lazy" />
+          <h3>صمّم تيشيرتك...</h3>
+          <p>قريبا</p>
+        </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='product-details.html'"
+        >
+          <img src="./img/attack-on-titan-t-shirt.png" alt="" loading="lazy" />
+          <h3>هحوم العمالقة</h3>
+          <p>25 SAR</p>
+        </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='product-details.html'"
+        >
+          <img src="./img/t-shirt.jpg" alt="" loading="lazy" />
+          <h3>نقف مع فلسطين</h3>
+          <p>25 SAR</p>
+        </div>
+        <div
+          class="product-card"
+          onclick="window.location.href='product-details.html'"
+        >
+          <img src="./img/t-shirt.jpg" alt="" loading="lazy" />
+          <h3>المال ليس كل شئ</h3>
+          <p>25 SAR</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2>من نحن</h2>
+      <p class="container">
+        انطلقنا بفكرة بسيطة: تقديم تيشيرتات مبتكرة تجمع بين الجودة العالية
+        والتصاميم العصرية، لتعكس شخصية كل عميل بأسلوبه الخاص.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <div class="footer-container container">
+        <div class="footer-col">
+          <h3>متجر نكست</h3>
+          <p>
+            نقدّم لك أفضل خامات القطن مع تصاميم عصرية لتجمع بين الراحة والأناقة.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html#">الرئيسية</a></li>
+            <li><a href="index.html#products">تيشيرتات</a></li>
+            <li><a href="index.html#about">من نحن</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>تواصل معنا</h4>
+          <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
+          <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
+        </div>
+        <div class="footer-col">
+          <h4>تابعنا</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

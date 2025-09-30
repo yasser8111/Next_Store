@@ -5,217 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>تفاصيل المنتج - Next Store</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/product-details.css">
 
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-    <style>
-      .product-details {
-        max-width: 1200px;
-        margin-bottom: 3rem;
-        padding: 2rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
-        align-items: center;
-        position: relative;
-      }
-
-      .product-details img {
-        width: 100%;
-        border-radius: 12px;
-        border: 1px solid #f0f0f0;
-        object-fit: cover;
-      }
-
-      .product-info h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #000;
-      }
-
-      .product-info p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        color: #333;
-      }
-
-      .product-price {
-        font-size: 1.4rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-        color: #000;
-      }
-
-      .product-specs {
-        margin-block: 1rem;
-        background: #fafafa;
-        padding: 1rem 1.5rem;
-        border-radius: 10px;
-        border: 1px solid #eee;
-      }
-
-      .product-specs h3 {
-        margin-bottom: 0.8rem;
-        font-size: 1.2rem;
-        color: #000;
-      }
-
-      .product-specs ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .product-specs li {
-        margin-bottom: 0.5rem;
-        font-size: 1rem;
-        color: #333;
-      }
-
-      .product-specs li strong {
-        color: #000;
-      }
-
-      .options {
-        margin-bottom: 1rem;
-      }
-
-      .options label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
-
-      .options select {
-        padding: 0.5rem;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        width: 100%;
-      }
-
-      .size-options {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .size-btn {
-        padding: 0.7rem 1.2rem;
-        border-radius: 10px;
-        border: 2px solid #ccc;
-        background: #fff;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      .size-btn:hover {
-        border-color: #000;
-        transform: scale(1.05);
-      }
-
-      .size-btn.active {
-        background: #000;
-        color: #fff;
-        border-color: #000;
-      }
-
-      .size-btn.disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      .color-options {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .color-btn {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        border: 3px solid #ccc;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      .color-btn:hover,
-      .color-btn.active {
-        border: 3px solid #000;
-        transform: scale(1.1);
-      }
-
-      .btn-buy {
-        display: inline-block;
-        background-color: #000;
-        color: #fff;
-        padding: 1rem 2.5rem;
-        border-radius: 30px;
-        font-weight: bold;
-        transition: 0.3s;
-        border: 1px solid #000;
-      }
-
-      .btn-buy:hover {
-        background-color: #fff;
-        color: #000;
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      #warning-message {
-        position: fixed;
-        top: 20px;
-        left: 48%;
-        transform: translate(-50%, -20px);
-        z-index: 9999;
-
-        opacity: 0;
-        visibility: hidden;
-
-        background: #ffe0e0;
-        border: 1px solid #ff4d4d;
-        padding: 0.7rem 1.5rem;
-        border-radius: 8px;
-        font-size: 0.95rem;
-        color: red;
-        font-weight: bold;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-        transition: all 0.3s ease;
-      }
-
-      #warning-message.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translate(-50%, 0);
-      }
-
-      @media (max-width: 768px) {
-        .product-details {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
-        .color-options {
-          justify-content: center;
-        }
-      }
-
-      @media (max-width: 540px) {
-        #warning-message {
-          top: 15px;
-          left: 50%;
-          font-size: 0.8rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./product-details.css">
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -245,7 +45,7 @@
     </nav>
 
     <!-- Product Details Section -->
-    <section class="product-details">
+    <section class="product-details container">
       <div id="warning-message">الرجاء اختيار المقاس واللون أولاً</div>
       <div>
         <img
@@ -343,7 +143,8 @@
       </div>
     </footer>
 
-    <script src="product-details.js"></script>
-    <script src="./script.js"></script>
+    <!-- JS  -->
+    <script src="js/script.js"></script>
+    <script src="js/product-details.js"></script>
   </body>
 </html>

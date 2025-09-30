@@ -5,76 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>تفاصيل المنتج - Next Store</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/product-details.css">
 
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-    <style>
-      .product-details {
-        max-width: 1200px;
-        margin: 3rem auto;
-        padding: 2rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
-        align-items: center;
-      }
-
-      .product-details img {
-        width: 100%;
-        border-radius: 12px;
-        border: 1px solid #f0f0f0;
-        object-fit: cover;
-      }
-
-      .product-info h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #000;
-      }
-
-      .product-info p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        color: #333;
-      }
-
-      .product-price {
-        font-size: 1.4rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-        color: #000;
-      }
-
-      .btn-buy {
-        display: inline-block;
-        background-color: #000;
-        color: #fff;
-        padding: 1rem 2.5rem;
-        border-radius: 30px;
-        font-weight: bold;
-        transition: 0.3s;
-        border: 1px solid #000;
-      }
-
-      .btn-buy:hover {
-        background-color: #fff;
-        color: #000;
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      @media (max-width: 768px) {
-        .product-details {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./product-details.css">
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -104,20 +45,21 @@
     </nav>
 
     <!-- Product Details Section -->
-    <section class="product-details">
+    <section class="product-details container">
+      <div id="warning-message">الرجاء اختيار المقاس واللون أولاً</div>
       <div>
-        <img src="./img/Customize-t-shirt.png" alt="صمم تيشيرتك" />
+        <img
+          src="./img/Customize-t-shirt.png"
+          alt=""
+        />
       </div>
       <div class="product-info">
-        <h1>صمم تيشيرتك</h1>
+        <h1>صمّم تيشيرتك...</h1>
         <p>
-          يمكنك إضافة تصميمك الخاص على التيشيرت بأفضل جودة، ولكن الميزة ستتوفر
-          قريبًا.
+           قريبًا ستكون قادرًا على إضافة تصميمك الخاص على التيشيرتات بجودة عالية وطباعة ممتازة.  
+    استعد لإظهار إبداعك بطريقة احترافية!
         </p>
-        <div class="product-price">قريبًا</div>
-        <!-- <a href="https://wa.me/967739770762" target="_blank" class="btn-buy">
-          اطلب عبر واتساب
-        </a> -->
+        <h2>قريبا</h2>
       </div>
     </section>
 
@@ -136,7 +78,7 @@
             <li><a href="index.html#">الرئيسية</a></li>
             <li><a href="index.html#products">تيشيرتات</a></li>
             <li><a href="index.html#about">من نحن</a></li>
-            <li><a href="#contact">اتصل بنا</a></li>
+            <li><a href="index.html#contact">اتصل بنا</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -147,15 +89,9 @@
         <div class="footer-col">
           <h4>تابعنا</h4>
           <div class="social-icons">
-            <a href="#" aria-label="Facebook"
-              ><i class="fa-brands fa-facebook"></i
-            ></a>
-            <a href="#" aria-label="Instagram"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="#" aria-label="Twitter"
-              ><i class="fa-brands fa-twitter"></i
-            ></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
           </div>
         </div>
       </div>
@@ -164,6 +100,8 @@
       </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <!-- JS  -->
+    <script src="js/script.js"></script>
+    <script src="js/product-details.js"></script>
   </body>
 </html>

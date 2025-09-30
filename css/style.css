@@ -220,11 +220,26 @@ a {
   background-color: #ffffff;
 }
 
+.products h2 {
+  color: #000;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.products p {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
 .products hr {
   border: none;
   height: 2px;
   background-color: black;
-  margin-bottom: 3rem;
+  margin-block: 3rem;
 }
 
 .product-grid {
@@ -379,21 +394,18 @@ a {
     overflow: hidden;
   }
 
-  /* كل رابط يتحرك بشكل منفصل */
   .nav-menu li {
     opacity: 0;
     transform: translateY(-30px);
     transition: all 0.2s ease-in-out, opacity 0.4s ease-in-out;
   }
 
-  /* عند فتح القائمة */
   .nav-menu.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
   }
 
-  /* التأخير لكل رابط */
   .nav-menu.show li:nth-child(1) {
     transition-delay: 0.05s;
     opacity: 1;
@@ -438,6 +450,22 @@ a {
     padding: 1.5rem 1rem;
   }
 
+  .products h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .products p {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .products hr {
+    margin-block: 2rem;
+  }
+
   .product-grid {
     gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
@@ -458,6 +486,49 @@ a {
     padding: 0 0.8rem 1rem;
     font-size: 1rem;
   }
+
+  .about {
+    padding: 3rem 1rem;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .footer {
+    margin-top: 2rem;
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-col h3,
+  .footer-col h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-col p,
+  .footer-col ul {
+    font-size: 0.95rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.9rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -473,7 +544,7 @@ a {
 
   .hero .btn {
     position: absolute;
-    top: 68.3%;
+    top: 66.3%;
     left: 140px;
 
     display: inline-block;

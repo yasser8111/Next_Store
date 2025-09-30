@@ -1,45 +1,60 @@
-// يخقي خلفيت الهيدر عندما يكون في اعلا الصفحه
+// ===== Navbar background toggle on scroll =====
 const navbar = document.getElementById("navbar");
 
-const handleScroll = () => {
-  if (window.scrollY <= 1) {
-    navbar.classList.add("top");
-  } else {
-    navbar.classList.remove("top");
+function toggleNavbarBg() {
+  navbar.classList.toggle("top", window.scrollY <= 1);
+}
+window.addEventListener("scroll", toggleNavbarBg);
+window.addEventListener("load", toggleNavbarBg);
+
+// ===== Smooth scroll with small offset below navbar =====
+(() => {
+  const nav = document.querySelector(".navbar");
+
+  const getOffset = () =>
+    (nav?.offsetHeight || 0) + (window.innerWidth >= 992 ? 24 : 12);
+
+  function scrollToId(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.offsetTop - getOffset();
+      window.scrollTo({ top, behavior: "smooth" });
+    }
   }
-};
 
-window.addEventListener("scroll", handleScroll);
-window.addEventListener("load", handleScroll);
-
-// تمرير سلس للروابط الداخلية يجعل القسم ياتي في منتصف الشاشة
-document.querySelectorAll('a[href*="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href').split('#')[1];
-    const target = document.getElementById(id);
-    if (!id || !target) return;
+  // Handle internal link clicks
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const id = link.getAttribute("href").slice(1);
+    if (!id) return;
 
     e.preventDefault();
-
-    const navH = document.querySelector('.navbar')?.offsetHeight || 0;
-    const pos = target.getBoundingClientRect().top + scrollY;
-    const offset = (innerHeight - target.offsetHeight) / 2;
-
-    scrollTo({ top: pos - offset - navH / 2, behavior: 'smooth' });
+    history.replaceState(null, "", "#" + id);
+    scrollToId(id);
   });
-});
 
+  // Handle page load with hash
+  window.addEventListener("load", () => {
+    if (location.hash) scrollToId(location.hash.slice(1));
+  });
 
-// اضهار و اخفاء قائمة الاختصرات في الشاشات الصغيرة
-const navToggle = document.querySelector(".nav-toggle"),
-      navMenu = document.querySelector(".nav-menu");
+  // Handle back/forward navigation
+  window.addEventListener("hashchange", () => {
+    if (location.hash) scrollToId(location.hash.slice(1));
+  });
+})();
+
+// ===== Mobile nav toggle =====
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
 
 navToggle.addEventListener("click", () => {
   navMenu.classList.toggle("show");
   navToggle.classList.toggle("active");
 });
 
-navMenu.addEventListener("click", e => {
+navMenu.addEventListener("click", (e) => {
   if (e.target.tagName === "A") {
     navMenu.classList.remove("show");
     navToggle.classList.remove("active");

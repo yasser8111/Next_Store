@@ -1,155 +1,145 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>تفاصيل المنتج - Next Store</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل المنتج - Next Store</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
 
-    <!-- CSS  -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/product-details.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/product-details.css" />
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./product-details.css" />
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-    <nav id="navbar" class="navbar top">
-      <div class="nav-container">
-        <ul class="nav-menu">
-          <li style="--i:4"><a href="#contact">اتصل بنا</a></li>
-          <li style="--i:3"><a href="index.html#about">من نحن</a></li>
-          <li style="--i:2"><a href="index.html#products">تيشيرتات</a></li>
-          <li style="--i:1"><a href="index.html#">الرئيسية</a></li>
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- SWIPER CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav id="navbar" class="navbar top">
+    <div class="nav-container">
+      <ul class="nav-menu">
+        <li style="--i: 4"><a href="#contact">اتصل بنا</a></li>
+        <li style="--i: 3"><a href="index.html#about">من نحن</a></li>
+        <li style="--i: 2"><a href="index.html#products">تيشيرتات</a></li>
+        <li style="--i: 1"><a href="index.html#">الرئيسية</a></li>
+      </ul>
+
+      <button class="nav-toggle" aria-label="فتح القائمة">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="logo">
+        <img src="./img/logo.webp" alt="Logo" onclick="window.location.href='index.html#'" />
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Details Section -->
+  <section class="product-details container">
+    <div id="warning-message">الرجاء اختيار المقاس واللون أولاً</div>
+
+    <!-- الصور -->
+    <div class="img-con">
+      <div class="swiper product-swiper">
+        <div class="swiper-wrapper">
+          <!-- سيتم إضافة الصور ديناميكيًا من JS -->
+        </div>
+
+        <!-- الأسهم -->
+        <div class="swiper-button-prev">
+          <i class="fa-solid fa-caret-right"></i>
+        </div>
+        <div class="swiper-button-next">
+          <i class="fa-solid fa-caret-left"></i>
+        </div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- معلومات المنتج -->
+    <div class="product-info">
+      <h1>اسم المنتج</h1>
+      <p>وصف المنتج</p>
+
+      <!-- المقاسات -->
+      <div class="options">
+        <label>اختر المقاس:</label>
+        <div class="size-options">
+          <!-- سيتم إضافة أزرار المقاسات ديناميكيًا -->
+        </div>
+      </div>
+
+      <!-- الألوان -->
+      <div class="options">
+        <label>اختر اللون:</label>
+        <div class="color-options">
+          <!-- سيتم إضافة أزرار الألوان ديناميكيًا -->
+        </div>
+      </div>
+
+      <div class="product-price">0 SAR</div>
+
+      <a id="whatsapp-link" href="#" target="_blank" class="btn-buy">
+        اطلب عبر واتساب
+      </a>
+
+      <div class="product-specs">
+        <h3>تفاصيل المنتج:</h3>
+        <ul>
+          <!-- سيتم إضافة تفاصيل/specs ديناميكيًا -->
         </ul>
+      </div>
+    </div>
+  </section>
 
-        <button class="nav-toggle" aria-label="فتح القائمة">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-
-        <div class="logo">
-          <img
-            src="./img/logo.webp"
-            alt="Logo"
-            onclick="window.location.href='index.html#'"
-          />
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>متجر نكست</h3>
+        <p>نقدّم لك أفضل خامات القطن مع تصاميم عصرية لتجمع بين الراحة والأناقة.</p>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html#">الرئيسية</a></li>
+          <li><a href="index.html#products">تيشيرتات</a></li>
+          <li><a href="index.html#about">من نحن</a></li>
+          <li><a href="index.html#contact">اتصل بنا</a></li>
+          <li><a href="terms.html">الأحكام والشروط</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
+        <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
+      </div>
+      <div class="footer-col">
+        <h4>تابعنا</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
         </div>
       </div>
-    </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
 
-    <!-- Product Details Section -->
-    <section class="product-details container">
-      <div id="warning-message">الرجاء اختيار المقاس واللون أولاً</div>
-      <div class="img-con">
-        <img
-          src="./img/attack-on-titan-t-shirt.webp"
-          alt="تيشيرت هجوم العمالقة"
-        />
-      </div>
-      <div class="product-info">
-        <h1>تيشيرت هجوم العمالقة</h1>
-        <p>
-          تيشيرت بجودة عالية مع تصميم أنيق مستوحى من أنمي هجوم العمالقة. مصنوع
-          من قماش قطني مريح ومناسب للاستخدام اليومي.
-        </p>
+  <!-- JS -->
+  <script src="js/script.js"></script>
+  <script src="js/product-details.js"></script>
 
-        <!-- المقاس -->
-        <div class="options">
-          <label>اختر المقاس:</label>
-          <div class="size-options">
-            <button class="size-btn" data-size="S">S</button>
-            <button class="size-btn" data-size="M">M</button>
-            <button class="size-btn" data-size="L">L</button>
-            <button class="size-btn disabled" data-size="XL" disabled>
-              XL
-            </button>
-          </div>
-        </div>
-
-        <!-- الألوان -->
-        <div class="options">
-          <label>اختر اللون:</label>
-          <div class="color-options">
-            <div
-              class="color-btn"
-              style="background-color: black"
-              data-color="أسود"
-            ></div>
-            <div
-              class="color-btn"
-              style="background-color: white"
-              data-color="أبيض"
-            ></div>
-          </div>
-        </div>
-
-        <div class="product-price">25 SAR</div>
-        <a id="whatsapp-link" href="#" target="_blank" class="btn-buy">
-          اطلب عبر واتساب
-        </a>
-
-        <div class="product-specs">
-          <h3>تفاصيل المنتج:</h3>
-          <ul>
-            <li>
-              <strong>القماش: </strong>50% قطن، 50% بوليستر — الخيار الأمثل
-              للطباعة.
-            </li>
-            <li>
-              <strong>الطباعة: </strong>حراري عالي الجودة لضمان ألوان زاهية
-              وتفاصيل دقيقة.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h3>متجر نكست</h3>
-          <p>
-            نقدّم لك أفضل خامات القطن مع تصاميم عصرية لتجمع بين الراحة والأناقة.
-          </p>
-        </div>
-        <div class="footer-col">
-          <h4>روابط سريعة</h4>
-          <ul>
-            <li><a href="index.html#">الرئيسية</a></li>
-            <li><a href="index.html#products">تيشيرتات</a></li>
-            <li><a href="index.html#about">من نحن</a></li>
-            <li><a href="index.html#contact">اتصل بنا</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>تواصل معنا</h4>
-          <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
-          <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
-        </div>
-        <div class="footer-col">
-          <h4>تابعنا</h4>
-          <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
-      </div>
-    </footer>
-
-    <!-- JS  -->
-    <script src="js/script.js"></script>
-    <script src="js/product-details.js"></script>
-  </body>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
 </html>

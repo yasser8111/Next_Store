@@ -20,10 +20,10 @@
     <nav id="navbar" class="navbar top">
       <div class="nav-container">
         <ul class="nav-menu">
-          <li style="--i:4"><a href="#contact">اتصل بنا</a></li>
-          <li style="--i:3"><a href="index.html#about">من نحن</a></li>
-          <li style="--i:2"><a href="index.html#products">تيشيرتات</a></li>
-          <li style="--i:1"><a href="index.html#">الرئيسية</a></li>
+          <li style="--i: 4"><a href="#contact">اتصل بنا</a></li>
+          <li style="--i: 3"><a href="index.html#about">من نحن</a></li>
+          <li style="--i: 2"><a href="index.html#products">تيشيرتات</a></li>
+          <li style="--i: 1"><a href="index.html#">الرئيسية</a></li>
         </ul>
 
         <button class="nav-toggle" aria-label="فتح القائمة">
@@ -57,7 +57,7 @@
     <section id="products" class="products container">
       <h2>عرض الافتتاح!</h2>
       <p>
-        خذ تيشرتين وواحد مجاناً بمناسبة افتتاح متجر نكست. اغتنم الفرصة الآن!
+        خذ 2 تيشيرتات وواحد مجاناً بمناسبة افتتاح متجر نكست. اغتنم الفرصة الآن!
       </p>
 
       <hr />
@@ -66,33 +66,25 @@
           class="product-card Customize-card"
           onclick="window.location.href='customize-details.html'"
         >
-          <img src="./img/Customize-t-shirt.webp" alt="" loading="lazy" />
+          <img src="./img/t-shirt/customize.webp" alt="" loading="lazy" />
           <h3>صمّم تيشيرتك...</h3>
-          <p>قريبا</p>
+          <p>15.000 YER</p>
         </div>
-        <div
-          class="product-card"
-          onclick="window.location.href='product-details.html'"
-        >
-          <img src="./img/attack-on-titan-t-shirt.webp" alt="" loading="lazy" />
+        <div class="product-card" data-id="1" onclick="goToDetails(this)">
+          <img src="./img/t-shirt/AOT_1.webp" alt="" loading="lazy" />
           <h3>هجوم العمالقة</h3>
-          <p>25 SAR</p>
+          <p>12,000 YER</p>
         </div>
-        <div
-          class="product-card"
-          onclick="window.location.href='product-details.html'"
-        >
-          <img src="./img/t-shirt.webp" alt="" loading="lazy" />
-          <h3>نقف مع فلسطين</h3>
-          <p>25 SAR</p>
+
+        <div class="product-card" data-id="2" onclick="goToDetails(this)">
+          <img src="./img/t-shirt/porsche_1.webp" alt="" loading="lazy" />
+          <h3>تيشيرت بورش 911</h3>
+          <p>12,000 YER</p>
         </div>
-        <div
-          class="product-card"
-          onclick="window.location.href='product-details.html'"
-        >
-          <img src="./img/t-shirt.webp" alt="" loading="lazy" />
+        <div class="product-card" data-id="3" onclick="goToDetails(this)">
+          <img src="./img/t-shirt/money_1.webp" alt="" loading="lazy" />
           <h3>المال ليس كل شئ</h3>
-          <p>25 SAR</p>
+          <p>11,000 YER</p>
         </div>
       </div>
     </section>
@@ -123,6 +115,7 @@
             <li><a href="index.html#products">تيشيرتات</a></li>
             <li><a href="index.html#about">من نحن</a></li>
             <li><a href="#contact">اتصل بنا</a></li>
+            <li><a href="terms.html">الأحكام والشروط</a></li>
           </ul>
         </div>
         <div class="footer-col">

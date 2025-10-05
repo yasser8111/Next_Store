@@ -280,14 +280,14 @@ a {
 .product-card p {
   padding: 0 1rem 1.2rem;
   font-weight: bold;
-  color: #000000; /* السعر بالأسود */
+  color: #000000;
   font-size: 1.1rem;
 }
 
 /* About Section */
 .about {
   padding: 4rem 2rem;
-  background-color: #fafafa; /* خلفية رمادية فاتحة */
+  background-color: #fafafa;
   text-align: center;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
@@ -303,13 +303,13 @@ a {
   max-width: 700px;
   margin: 0 auto;
   font-size: 1.1rem;
-  color: #444444; /* رمادي غامق قليلاً */
+  color: #444444;
 }
 
 /* Footer */
 .footer {
-  background-color: #000000; /* أسود */
-  color: #ffffff; /* أبيض */
+  background-color: #000000;
+  color: #ffffff;
   padding: 3rem 2rem 1.5rem;
   margin-top: 4rem;
 }
@@ -331,7 +331,7 @@ a {
 
 .footer-col p,
 .footer-col ul {
-  color: #bbbbbb; /* رمادي فاتح */
+  color: #bbbbbb;
   font-size: 1rem;
 }
 
@@ -364,9 +364,6 @@ a {
 
 /* Responsive Design */
 @media (max-width: 540px) {
-  /* .container {
-  } */
-
   .logo img {
     width: 60px;
     margin-top: 5px;
@@ -468,17 +465,16 @@ a {
 
   .product-card img {
     padding: 0.5rem;
-    height: 200px;
-    /* max-height: 100px; */
+    height: clamp(150px, 20vw, 200px);
   }
 
   .product-card h3 {
-    padding: 1rem 0.8rem 0.3rem;
+    padding: 0.8rem 0.8rem 0.3rem;
     font-size: 0.9rem;
   }
 
   .product-card p {
-    padding: 0 0.8rem 1rem;
+    padding: 0 0.8rem 0.5rem;
     font-size: 1rem;
   }
 
@@ -523,6 +519,50 @@ a {
 
   .footer-bottom {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .nav-container {
+    padding: 0.5rem 1rem;
+  }
+  .hero {
+    height: calc(60vh - 88px);
+  }
+  .hero .btn {
+    top: -65%;
+  }
+  .hero img.hero-img-2 {
+    margin-top: 30px;
+  }
+  .products {
+    padding: 1rem 0.5rem;
+  }
+  .products h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .product-grid {
+    gap: 1rem;
+  }
+  .about {
+    padding: 2rem 1rem;
+  }
+  .about h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer {
+    margin-top: 1rem;
+    padding: 1rem 0.5rem 0.5rem;
+  }
+  .footer-col h3,
+  .footer-col h4 {
+    font-size: 0.9rem;
+  }
+  .footer-col p,
+  .footer-col ul {
+    font-size: 0.75rem;
   }
 }
 

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الأحكام والشروط - Next Store</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      /* البداية: مخفية */
+      .animate-hidden {
+        opacity: 0;
+        transition: all 0.8s ease;
+      }
+
+      .animate-right {
+        transform: translateX(50px);
+      }
+
+      .animate-show {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    </style>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar top">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li style="--i: 4"><a href="#contact">اتصل بنا</a></li>
+          <li style="--i: 3"><a href="index.html#about">من نحن</a></li>
+          <li style="--i: 2"><a href="index.html#products">تيشيرتات</a></li>
+          <li style="--i: 1"><a href="index.html#">الرئيسية</a></li>
+        </ul>
+
+        <button class="nav-toggle" aria-label="فتح القائمة">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <div class="logo">
+          <img
+            src="./img/logo.webp"
+            alt="Logo"
+            onclick="window.location.href='index.html#'"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Terms Section -->
+    <section class="container" style="padding: 3rem 1.5rem">
+      <h1 style="margin-bottom: 1.5rem; text-align: center">الأحكام والشروط</h1>
+      <p>
+        مرحباً بكم في متجر <strong>Next Store</strong>. إن دخولك واستخدامك
+        لموقعنا يعني موافقتك الكاملة على الالتزام بهذه الأحكام والشروط. نرجو
+        قراءة هذه الصفحة بعناية قبل استخدام الموقع أو شراء أي من منتجاتنا.
+      </p>
+
+      <h3>١. الشروط العامة</h3>
+      <p>
+        - يحق للمتجر تعديل أو تحديث هذه الشروط في أي وقت دون إشعار مسبق.<br />
+        - استمرارك في استخدام الموقع بعد أي تعديل يعني موافقتك على الشروط
+        الجديدة.<br />
+        - يحق للمتجر رفض تقديم الخدمة لأي شخص في أي وقت إذا ثبت إساءة الاستخدام.
+      </p>
+
+      <h3>٢. الحسابات</h3>
+      <p>
+        - قد يُطلب من العميل تسجيل حساب عند الشراء.<br />
+        - العميل مسؤول عن سرية بيانات دخوله (البريد الإلكتروني وكلمة المرور).<br />
+        - لا يتحمل المتجر أي مسؤولية عن أي استخدام غير مصرح به للحساب الشخصي.
+      </p>
+
+      <h3>٣. المنتجات</h3>
+      <p>
+        - جميع المنتجات المعروضة في المتجر كما هي دون أي ضمانات إضافية إلا ما تم
+        ذكره في الوصف.<br />
+        - الصور المعروضة تقريبية وقد تختلف عن الواقع قليلاً بسبب اختلاف شاشات
+        العرض والإضاءة.<br />
+        - يحق للمتجر إيقاف أو تعديل أو حذف أي منتج دون إشعار مسبق.
+      </p>
+
+      <h3>٤. الأسعار والدفع</h3>
+      <p>
+        - جميع الأسعار معروضة بالريال السعودي (SAR).<br />
+        - يحتفظ المتجر بالحق في تعديل الأسعار في أي وقت.<br />
+        - الدفع يتم عبر الوسائل المتاحة الموضحة في صفحة الشراء، مثل التحويل
+        البنكي أو الدفع عند الاستلام.<br />
+        - في حال فشل عملية الدفع، لا يعتبر الطلب مؤكدًا.
+      </p>
+
+      <h3>٥. الشحن والتسليم</h3>
+      <p>
+        - تتم معالجة الطلبات خلال ١-٣ أيام عمل.<br />
+        - مدة الشحن تختلف حسب المدينة ووسيلة التوصيل.<br />
+        - لا يتحمل المتجر مسؤولية التأخير الناتج عن شركات الشحن أو الظروف
+        الطارئة.<br />
+        - العميل مسؤول عن توفير عنوان صحيح وكامل للتوصيل.
+      </p>
+
+      <h3>٦. سياسة الإرجاع والاستبدال</h3>
+      <p>
+        - يمكن استرجاع أو استبدال المنتج خلال ٧ أيام من تاريخ الاستلام.<br />
+        - يجب أن يكون المنتج بحالته الأصلية غير مستخدم وغير مغسول مع كامل
+        الملحقات والتغليف.<br />
+        - يتحمل العميل تكاليف الشحن في حال الرغبة في الإرجاع أو الاستبدال إلا
+        إذا كان المنتج معيباً.<br />
+        - المنتجات المخفضة قد لا تكون مشمولة في سياسة الاسترجاع.
+      </p>
+
+      <h3>٧. الاستخدام الممنوع</h3>
+      <p>
+        - يحظر استخدام الموقع في أي أنشطة غير قانونية أو احتيالية.<br />
+        - يمنع محاولة اختراق الموقع أو التلاعب بالبيانات أو استغلال الثغرات.<br />
+        - يحق للمتجر اتخاذ إجراءات قانونية ضد أي شخص يخالف هذه القواعد.
+      </p>
+
+      <h3>٨. الملكية الفكرية</h3>
+      <p>
+        - جميع محتويات الموقع (النصوص، الصور، التصاميم، الشعار) مملوكة لمتجر
+        <strong>Next Store</strong>.<br />
+        - لا يجوز نسخ أو إعادة نشر أو استخدام أي محتوى لأغراض تجارية دون إذن خطي
+        مسبق.
+      </p>
+
+      <h3>٩. حماية البيانات</h3>
+      <p>
+        - يحترم المتجر خصوصية عملائه ويضمن حماية بياناتهم.<br />
+        - يتم استخدام البيانات الشخصية فقط لمعالجة الطلبات والتوصيل والتواصل مع
+        العميل.<br />
+        - لا تتم مشاركة بيانات العملاء مع أي طرف ثالث إلا في حال الضرورة (شركات
+        الشحن).
+      </p>
+
+      <h3>١٠. القانون والاختصاص القضائي</h3>
+      <p>
+        - تخضع هذه الأحكام والشروط لأنظمة المملكة العربية السعودية.<br />
+        - في حال حدوث أي نزاع، تكون الجهة القضائية المختصة هي المحاكم في
+        المملكة.
+      </p>
+
+      <h3>١١. التواصل</h3>
+      <p>
+        لأي استفسارات أو شكاوى، يمكنكم التواصل معنا عبر البريد الإلكتروني:
+        <a href="mailto:hello@nextstore.com">hello@nextstore.com</a><br />
+        أو الاتصال بنا على الرقم: <strong>+966 50 000 0000</strong>
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container container">
+        <div class="footer-col">
+          <h3>متجر نكست</h3>
+          <p>
+            نقدّم لك أفضل خامات القطن مع تصاميم عصرية لتجمع بين الراحة والأناقة.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="../index.html#">الرئيسية</a></li>
+            <li><a href="../index.html#products">تيشيرتات</a></li>
+            <li><a href="../index.html#about">من نحن</a></li>
+            <li><a href="../index.html#contact">اتصل بنا</a></li>
+            <li><a href="terms.html">الأحكام والشروط</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>تواصل معنا</h4>
+          <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
+          <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
+        </div>
+        <div class="footer-col">
+          <h4>تابعنا</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(
+          "section.container h1, section.container h3, section.container p"
+        );
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, index) => {
+              if (entry.isIntersecting) {
+                setTimeout(() => {
+                  entry.target.classList.add("animate-show");
+                }, index * 200); // التأخير بين كل عنصر
+                observer.unobserve(entry.target); // بعد ما يظهر يتوقف
+              }
+            });
+          },
+          { threshold: 0.2 }
+        ); // يبدأ لما 20% من العنصر يدخل الشاشة
+
+        elements.forEach((el) => {
+          el.classList.add("animate-hidden", "animate-right");
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>

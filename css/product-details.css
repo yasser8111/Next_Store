@@ -12,7 +12,6 @@
 .product-details .img-con {
   width: 100%;
   position: sticky;
-  border: 1px solid #f0f0f0;
   top: 9rem;
 }
 
@@ -209,6 +208,7 @@
 @media (max-width: 768px) {
   .product-details {
     grid-template-columns: 1fr;
+    padding: 1rem;
   }
   .color-options {
     justify-content: center;
@@ -216,6 +216,24 @@
   .product-details .img-con {
     top: 0;
     position: relative;
+  }
+  product-specs {
+    margin-block: 1rem;
+  }
+
+  .product-swiper {
+    max-width: 100vw !important;
+  }
+
+  .swiper-button-prev {
+    background: none;
+    color: #333 !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    color: #000;
+    font-size: 24px;
+    transition: 0.2s ease;
   }
 }
 
@@ -254,4 +272,68 @@
     width: 100%;
     text-align: center;
   }
+}
+
+/* ----- test -----  */
+
+.product-swiper {
+  width: 100%;
+  max-width: calc(500px - 10vw); /* أقصى عرض للسلايدر */
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-swiper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  max-height: 70vh; /* يمنع الصور الطويلة */
+}
+
+/* الأسهم */
+.swiper-button-next,
+.swiper-button-prev {
+  background: #fff !important;
+  width: 40px !important;
+  height: 40px !important;
+  color: #000 !important;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.swiper-button-next i,
+.swiper-button-prev i {
+  pointer-events: none;
+}
+
+/* hover */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #fff !important;
+  background: #000 !important;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* إزالة الأسهم الافتراضية */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+/* النقاط */
+.swiper-pagination-bullet {
+  background: #000 !important;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  background: #000 !important;
+  opacity: 1;
 }

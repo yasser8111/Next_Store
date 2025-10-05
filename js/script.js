@@ -60,3 +60,10 @@ navMenu.addEventListener("click", (e) => {
     navToggle.classList.remove("active");
   }
 });
+
+// ===== Product card click to details page =====
+
+function goToDetails(card) {
+  const id = card.dataset.id;
+  window.location.href = `product-details.html?id=${id}`;
+}

@@ -159,3 +159,42 @@ async function loadProducts() {
 }
 
 loadProducts();
+
+
+function router() {
+  const hash = location.hash.slice(1); // يزيل #
+  const mainContainer = document.querySelector(".main-container"); // حاوية رئيسية للمحتوى
+
+  if (!mainContainer) return;
+
+  if (hash.startsWith("/product/")) {
+    const id = hash.split("/")[2]; // الرقم 2 يمثل id
+    const product = JSON.parse(localStorage.getItem("selectedProduct"));
+
+    if (!product || product.id !== id) {
+      mainContainer.innerHTML = "<p>المنتج غير موجود</p>";
+      return;
+    }
+
+    mainContainer.innerHTML = `
+      <div class="product-details">
+        <img src="./img/t-shirt/${product.images[0]}" alt="${product.name}">
+        <h2>${product.name}</h2>
+        <p>${product.price} ${product.currency}</p>
+        <p>${product.description}</p>
+      </div>
+    `;
+  } else {
+    // الصفحة الرئيسية
+    mainContainer.innerHTML = `
+      <div class="product-grid"></div>
+      <div id="loading-container"></div>
+      <div id="customize-card"></div>
+    `;
+    loadProducts(); // إعادة تحميل المنتجات
+  }
+}
+
+// شغل الروتر عند تحميل الصفحة وعند تغيير الهـاش
+window.addEventListener("load", router);
+window.addEventListener("hashchange", router);

@@ -108,19 +108,21 @@ async function loadProducts() {
       card.className = "product-card";
       card.dataset.id = p.id;
 
-      // تخزين بيانات المنتج في localStorage عند الضغط عليه
+      // عند الضغط على المنتج
       card.onclick = () => {
-        // حفظ بيانات المنتج كاملة في localStorage
         localStorage.setItem("selectedProduct", JSON.stringify(p));
-        // الانتقال إلى صفحة التفاصيل
         window.location.href = `product-details.html?id=${p.id}`;
       };
 
+      // ✅ إضافة مسار src/assets/ تلقائياً
+      const imagePath = `src/assets/${p.images[0]}`;
+
       card.innerHTML = `
-          <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
-          <h3>${p.name}</h3>
-          <p>${p.price} ${p.currency}</p>
-        `;
+    <img src="${imagePath}" alt="${p.name}" loading="lazy">
+    <h3>${p.name}</h3>
+    <p>${p.price} ${p.currency}</p>
+  `;
+
       grid.appendChild(card);
     });
 

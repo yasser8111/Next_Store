@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     swiperWrapper.innerHTML = product.images
       .map(
         (src) =>
-          `<div class="swiper-slide"><img src="${src}" alt="${product.name}"></div>`
+          `<div class="swiper-slide"><img src="./src/assets/img/t-shirt/${src}" alt="${product.name}"></div>`
       )
       .join("");
     if (window.productSwiper) window.productSwiper.destroy(true, true);

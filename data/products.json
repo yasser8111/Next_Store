@@ -30,9 +30,9 @@
     "price": "12,000",
     "currency": "YER",
     "images": [
-      "./img/t-shirt/Porsche_1.webp",
-      "./img/t-shirt/Porsche_2.webp",
-      "./img/t-shirt/Porsche_3.webp"
+      "./img/t-shirt/porsche_1.webp",
+      "./img/t-shirt/porsche_2.webp",
+      "./img/t-shirt/porsche_3.webp"
     ],
     "sizes": ["M", "L", "XL", "XXL"],
     "colors": ["أسود"],

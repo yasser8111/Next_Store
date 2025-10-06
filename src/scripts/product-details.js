@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let product;
   try {
+    product = JSON.parse(productData);
     console.log("Product loaded from localStorage:", product);
   } catch (err) {
     console.error("Error parsing product data:", err);

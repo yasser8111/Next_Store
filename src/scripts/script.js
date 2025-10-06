@@ -87,35 +87,35 @@ async function loadProducts() {
   const grid = document.querySelector(".product-grid");
   const loadingContainer = document.getElementById("loading-container");
   const customizeCard = document.getElementById("customize-card");
-  
+
   // التحقق من وجود العنصر قبل المتابعة
   if (!grid) return;
-  
+
   // إخفاء الشبكة في البداية
   grid.classList.remove("loaded");
-  
+
   try {
     // إظهار رسالة التحميل
     if (loadingContainer) {
       loadingContainer.style.display = "flex";
     }
-    
+
     const snapshot = await getDocs(collection(db, "products"));
-    
+
     snapshot.forEach((doc) => {
       const p = { id: doc.id, ...doc.data() };
       const card = document.createElement("div");
       card.className = "product-card";
       card.dataset.id = p.id;
-      
+
       // تخزين بيانات المنتج في localStorage عند الضغط عليه
       card.onclick = () => {
         // حفظ بيانات المنتج كاملة في localStorage
-        localStorage.setItem('selectedProduct', JSON.stringify(p));
+        localStorage.setItem("selectedProduct", JSON.stringify(p));
         // الانتقال إلى صفحة التفاصيل
         window.location.href = `product-details.html?id=${p.id}`;
       };
-      
+
       card.innerHTML = `
           <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
           <h3>${p.name}</h3>
@@ -123,22 +123,21 @@ async function loadProducts() {
         `;
       grid.appendChild(card);
     });
-    
+
     // إخفاء رسالة التحميل وإظهار المنتجات
     if (loadingContainer) {
       loadingContainer.style.display = "none";
     }
-    
+
     // إظهار بطاقة التصميم المخصص
     if (customizeCard) {
       customizeCard.style.display = "block";
     }
-    
+
     grid.classList.add("loaded");
-    
   } catch (error) {
     console.error("Error loading products:", error);
-    
+
     // عرض رسالة خطأ بدلاً من رسالة التحميل
     if (loadingContainer) {
       loadingContainer.innerHTML = `

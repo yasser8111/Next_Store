@@ -4,18 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>تفاصيل المنتج - Next Store</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="../assets/img/logo.webp" />
 
-    <!-- CSS  -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="./css/product-details.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/product-details.css" />
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="./product-details.css" />
+
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -36,7 +41,7 @@
 
         <div class="logo">
           <img
-            src="./img/logo.webp"
+            src="../assets/img/logo.webp"
             alt="Logo"
             onclick="window.location.href='index.html#'"
           />
@@ -47,16 +52,65 @@
     <!-- Product Details Section -->
     <section class="product-details container">
       <div id="warning-message">الرجاء اختيار المقاس واللون أولاً</div>
-      <div>
-        <img src="./img/t-shirt/customize.webp" alt="" />
+
+      <!-- الصور -->
+      <div class="img-con">
+        <div class="swiper product-swiper">
+          <div class="swiper-wrapper">
+            <!-- سيتم إضافة الصور ديناميكيًا من JS -->
+          </div>
+
+          <!-- الأسهم -->
+          <div class="swiper-button-prev">
+            <i class="fa-solid fa-caret-right"></i>
+          </div>
+          <div class="swiper-button-next">
+            <i class="fa-solid fa-caret-left"></i>
+          </div>
+
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
+
+      <!-- معلومات المنتج -->
       <div class="product-info">
-        <h1>صمّم تيشيرتك...</h1>
-        <p>
-          قريبًا ستكون قادرًا على إضافة تصميمك الخاص على التيشيرتات بجودة عالية
-          وطباعة ممتازة. استعد لإظهار إبداعك بطريقة احترافية!
-        </p>
-        <h2>قريبا</h2>
+        <h1>اسم المنتج</h1>
+        <p>وصف المنتج</p>
+
+        <!-- المقاسات -->
+        <div class="options">
+          <label>اختر المقاس:</label>
+          <div class="size-options">
+            <button class="size-btn" data-size="S">S</button>
+            <button class="size-btn" data-size="M">M</button>
+            <button class="size-btn" data-size="L">L</button>
+            <button class="size-btn" data-size="XL">XL</button>
+            <button class="size-btn" data-size="XXL">XXL</button>
+            <button class="size-btn disabled" data-size="XXXL">XXXL</button>
+          </div>
+        </div>
+
+        <!-- الألوان -->
+        <div class="options">
+          <label>اختر اللون:</label>
+          <div class="color-options">
+            <!-- سيتم إضافة أزرار الألوان ديناميكيًا -->
+          </div>
+        </div>
+
+        <div class="product-price">0 SAR</div>
+
+        <a id="whatsapp-link" href="#" target="_blank" class="btn-buy">
+          اطلب عبر واتساب
+        </a>
+
+        <div class="product-specs">
+          <h3>تفاصيل المنتج:</h3>
+          <ul>
+            <!-- سيتم إضافة تفاصيل/specs ديناميكيًا -->
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -97,8 +151,11 @@
       </div>
     </footer>
 
-    <!-- JS  -->
-    <script src="js/script.js"></script>
-    <script src="js/product-details.js"></script>
+  <!-- JS -->
+  <script type="module" src="../scripts/script.js"></script>
+  <script type="module" src="../scripts/product-details.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>

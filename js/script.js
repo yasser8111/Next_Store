@@ -61,29 +61,91 @@ navMenu.addEventListener("click", (e) => {
   }
 });
 
-// ===== Product card click to details page =====
-
-function goToDetails(card) {
-  const id = card.dataset.id;
-  window.location.href = `product-details.html?id=${id}`;
-}
-
 // ===== Fetch and display products =====
 
-fetch("./data/products.json")
-  .then((res) => res.json())
-  .then((products) => {
-    const grid = document.querySelector(".product-grid");
-    products.forEach((p) => {
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function loadProducts() {
+  const grid = document.querySelector(".product-grid");
+  const loadingContainer = document.getElementById("loading-container");
+  const customizeCard = document.getElementById("customize-card");
+  
+  // التحقق من وجود العنصر قبل المتابعة
+  if (!grid) return;
+  
+  // إخفاء الشبكة في البداية
+  grid.classList.remove("loaded");
+  
+  try {
+    // إظهار رسالة التحميل
+    if (loadingContainer) {
+      loadingContainer.style.display = "flex";
+    }
+    
+    const snapshot = await getDocs(collection(db, "products"));
+    
+    snapshot.forEach((doc) => {
+      const p = { id: doc.id, ...doc.data() };
       const card = document.createElement("div");
       card.className = "product-card";
       card.dataset.id = p.id;
-      card.onclick = () => goToDetails(card);
+      
+      // تخزين بيانات المنتج في localStorage عند الضغط عليه
+      card.onclick = () => {
+        // حفظ بيانات المنتج كاملة في localStorage
+        localStorage.setItem('selectedProduct', JSON.stringify(p));
+        // الانتقال إلى صفحة التفاصيل
+        window.location.href = `product-details.html?id=${p.id}`;
+      };
+      
       card.innerHTML = `
-        <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
-        <h3>${p.name}</h3>
-        <p>${p.price} ${p.currency}</p>
-      `;
+          <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
+          <h3>${p.name}</h3>
+          <p>${p.price} ${p.currency}</p>
+        `;
       grid.appendChild(card);
     });
-  });
+    
+    // إخفاء رسالة التحميل وإظهار المنتجات
+    if (loadingContainer) {
+      loadingContainer.style.display = "none";
+    }
+    
+    // إظهار بطاقة التصميم المخصص
+    if (customizeCard) {
+      customizeCard.style.display = "block";
+    }
+    
+    grid.classList.add("loaded");
+    
+  } catch (error) {
+    console.error("Error loading products:", error);
+    
+    // عرض رسالة خطأ بدلاً من رسالة التحميل
+    if (loadingContainer) {
+      loadingContainer.innerHTML = `
+        <p class="loading-text" style="color: #e74c3c;">حدث خطأ أثناء تحميل المنتجات. يرجى المحاولة مرة أخرى.</p>
+      `;
+    }
+  }
+}
+
+loadProducts();

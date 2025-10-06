@@ -9,30 +9,28 @@ const productDesc = document.querySelector(".product-info p");
 const productPrice = document.querySelector(".product-price");
 const specsList = document.querySelector(".product-specs ul");
 
-// رقم الهاتف الافتراضي
+// ===== Phone number =====
 const phoneNumber = "967739770762";
 
-// ===== Get the selected button in a group =====
+// ===== Helper to get selected button =====
 const getSelected = (btns) =>
   [...btns].find((b) => b.classList.contains("active"));
 
-// ===== Update WhatsApp link based on selections =====
+// ===== Update WhatsApp link =====
 const updateLink = () => {
-  const sizeBtns = document.querySelectorAll(".size-btn:not(.disabled)");
-  const colorBtns = document.querySelectorAll(".color-btn");
-  const size = getSelected(sizeBtns);
-  const color = getSelected(colorBtns);
-
-  if (size && color) {
-    whatsappLink.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      `سلام عليكم\nاريد شراء ${productTitle.textContent} بمقاس ${size.dataset.size} ولون ${color.dataset.color}`
-    )}`;
-  } else {
-    whatsappLink.href = "#";
-  }
+  const size = getSelected(
+    document.querySelectorAll(".size-btn:not(.disabled)")
+  );
+  const color = getSelected(document.querySelectorAll(".color-btn"));
+  whatsappLink.href =
+    size && color
+      ? `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+          `Hello,\nI want to buy ${productTitle.textContent} in size ${size.dataset.size} and color ${color.dataset.color}`
+        )}`
+      : "#";
 };
 
-// ===== Activate a button in a group =====
+// ===== Activate a button =====
 const activateBtn = (btn) => {
   btn.parentElement
     .querySelectorAll(".active")
@@ -42,19 +40,19 @@ const activateBtn = (btn) => {
   updateLink();
 };
 
-// ===== Handle WhatsApp click =====
+// ===== WhatsApp click handler =====
 whatsappLink.addEventListener("click", (e) => {
-  const sizeBtns = document.querySelectorAll(".size-btn:not(.disabled)");
-  const colorBtns = document.querySelectorAll(".color-btn");
-  if (!getSelected(sizeBtns) || !getSelected(colorBtns)) {
+  const sizeSelected = getSelected(
+    document.querySelectorAll(".size-btn:not(.disabled)")
+  );
+  const colorSelected = getSelected(document.querySelectorAll(".color-btn"));
+  if (!sizeSelected || !colorSelected) {
     e.preventDefault();
-    if (warning.classList.contains("active")) {
-      warning.classList.remove("shake");
-      void warning.offsetWidth;
-      warning.classList.add("shake");
-    } else {
-      warning.classList.add("active");
-    }
+    warning.classList.contains("active")
+      ? (warning.classList.remove("shake"),
+        void warning.offsetWidth,
+        warning.classList.add("shake"))
+      : warning.classList.add("active");
     clearTimeout(warning.timeoutId);
     warning.timeoutId = setTimeout(
       () => warning.classList.remove("active", "shake"),
@@ -63,9 +61,16 @@ whatsappLink.addEventListener("click", (e) => {
   }
 });
 
-// ===== Read product ID from URL =====
-const urlParams = new URLSearchParams(window.location.search);
-const productId = parseInt(urlParams.get("id"));
+// ===== Get product ID from URL =====
+const productId = parseInt(
+  new URLSearchParams(window.location.search).get("id")
+);
+
+const colorMap = {
+  "أسود": "#000000",
+  "أبيض": "#ffffff",
+};
+
 
 // ===== Fetch product data =====
 fetch("data/products.json")
@@ -74,16 +79,13 @@ fetch("data/products.json")
     const product = products.find((p) => p.id === productId);
     if (!product) return;
 
-    // ===== Update Swiper images =====
-    swiperWrapper.innerHTML = "";
-    product.images.forEach((src) => {
-      const slide = document.createElement("div");
-      slide.classList.add("swiper-slide");
-      slide.innerHTML = `<img src="${src}" alt="${product.name}"/>`;
-      swiperWrapper.appendChild(slide);
-    });
-
-    // ===== Initialize Swiper =====
+    // ===== Swiper images =====
+    swiperWrapper.innerHTML = product.images
+      .map(
+        (src) =>
+          `<div class="swiper-slide"><img src="${src}" alt="${product.name}"></div>`
+      )
+      .join("");
     if (window.productSwiper) productSwiper.destroy(true, true);
     window.productSwiper = new Swiper(".product-swiper", {
       loop: true,
@@ -94,42 +96,49 @@ fetch("data/products.json")
       },
     });
 
-    // ===== Update product info =====
+    // ===== Product info =====
     productTitle.textContent = product.name;
     productDesc.textContent = product.description;
     productPrice.textContent = `${product.price} ${product.currency}`;
 
-    // ===== Update sizes =====
-    sizeContainer.innerHTML = "";
-    product.sizes.forEach((size) => {
-      const btn = document.createElement("button");
-      btn.classList.add("size-btn");
-      btn.dataset.size = size;
-      btn.textContent = size;
-      sizeContainer.appendChild(btn);
-      btn.addEventListener("click", () => activateBtn(btn));
+    // ===== Sizes (control availability only, buttons already in HTML) =====
+    const availableSizes = product.sizes.map((s) => s.value || s); // جميع الأحجام المتوفرة
+
+    document.querySelectorAll(".size-btn").forEach((btn) => {
+      if (!availableSizes.includes(btn.dataset.size)) {
+        btn.classList.add("disabled");
+      } else {
+        btn.classList.remove("disabled");
+      }
+      btn.addEventListener("click", () => {
+        if (!btn.classList.contains("disabled")) activateBtn(btn);
+      });
     });
 
-    // ===== Update colors =====
-    colorContainer.innerHTML = "";
+    // ===== Colors (add from JSON, auto-select if only one) =====
+    colorContainer.innerHTML = ""; // نفرغ المحتوى القديم
+
     product.colors.forEach((color) => {
       const div = document.createElement("div");
-      div.classList.add("color-btn");
+      div.className = "color-btn";
       div.dataset.color = color;
-      div.style.backgroundColor = color.toLowerCase();
-      colorContainer.appendChild(div);
+      div.style.backgroundColor = colorMap[color] || "#ffffff";
       div.addEventListener("click", () => activateBtn(div));
+      colorContainer.appendChild(div);
     });
 
-    // ===== Update specs =====
-    specsList.innerHTML = "";
-    product.specs.forEach((spec) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<strong>${spec.title}: </strong>${spec.value}`;
-      specsList.appendChild(li);
-    });
+    // ===== Auto-select if only one color =====
+    if (product.colors.length === 1) {
+      const onlyColorBtn = colorContainer.querySelector(".color-btn");
+      activateBtn(onlyColorBtn);
+    }
 
-    // ===== Initialize WhatsApp link =====
+    // ===== Specs =====
+    specsList.innerHTML = product.specs
+      .map((s) => `<li><strong>${s.title}:</strong> ${s.value}</li>`)
+      .join("");
+
+    // ===== Update WhatsApp link =====
     updateLink();
   })
-  .catch((err) => console.error(err));
+  .catch(console.error);

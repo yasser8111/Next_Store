@@ -67,3 +67,23 @@ function goToDetails(card) {
   const id = card.dataset.id;
   window.location.href = `product-details.html?id=${id}`;
 }
+
+// ===== Fetch and display products =====
+
+fetch("./data/products.json")
+  .then((res) => res.json())
+  .then((products) => {
+    const grid = document.querySelector(".product-grid");
+    products.forEach((p) => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.dataset.id = p.id;
+      card.onclick = () => goToDetails(card);
+      card.innerHTML = `
+        <img src="${p.images[0]}" alt="${p.name}" loading="lazy">
+        <h3>${p.name}</h3>
+        <p>${p.price} ${p.currency}</p>
+      `;
+      grid.appendChild(card);
+    });
+  });

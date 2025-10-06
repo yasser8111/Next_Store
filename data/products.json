@@ -35,7 +35,7 @@
       "./img/t-shirt/Porsche_3.webp"
     ],
     "sizes": ["M", "L", "XL", "XXL"],
-    "colors": ["أسود", "أبيض"],
+    "colors": ["أسود"],
     "specs": [
       { "title": "القماش", "value": "100% قطن ناعم ومريح بجودة ممتازة." },
       {
@@ -56,7 +56,7 @@
       "./img/t-shirt/money_3.webp"
     ],
     "sizes": ["S", "M", "L", "XL", "XXL"],
-    "colors": ["أسود", "أبيض", "رمادي"],
+    "colors": ["أسود"],
     "specs": [
       {
         "title": "القماش",

@@ -124,8 +124,7 @@ async function loadProducts() {
         window.location.href = `product-details.html?id=${p.id}`;
       };
 
-      // ✅ إضافة مسار src/assets/ تلقائياً
-      const imagePath = `./src/assets/img/t-shirt/${p.images[0]}`;
+      const imagePath = `./public/img/t-shirt/${p.images[0]}`;
 
       card.innerHTML = `
     <img src="${imagePath}" alt="${p.name}" loading="lazy">

@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Next Store - متجر نكست</title>
-    <link rel="icon" type="image/x-icon" href="./public/img/logo.webp" />
+    <link rel="icon" type="image/x-icon" href="./img/logo.webp" />
 
     <!-- CSS  -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/product-details.css" />
 
     <!-- Font Awesome -->
     <link
@@ -34,7 +36,7 @@
 
         <div class="logo">
           <img
-            src="./src/assets/logo.webp"
+            src="./img/logo.webp"
             alt="Logo"
             onclick="window.location.href='#'"
           />
@@ -45,13 +47,13 @@
     <!-- Hero Section -->
     <section id="home" class="hero container">
       <img
-        src="./src/assets/img/hero.webp"
+        src="./img/hero.webp"
         class="hero-img"
         alt=""
         loading="lazy"
       />
       <img
-        src="./src/assets/img/hero_2.webp"
+        src="./img/hero_2.webp"
         class="hero-img-2"
         alt=""
         loading="lazy"
@@ -77,20 +79,7 @@
       </div>
 
       <div class="product-grid">
-        <div
-          class="product-card Customize-card"
-          onclick="window.location.href='.html/customize-details.html'"
-          style="display: none"
-          id="customize-card"
-        >
-          <img
-            src="./src/assets/img/t-shirt/customize.webp"
-            alt=""
-            loading="lazy"
-          />
-          <h3>صمّم تيشيرتك...</h3>
-          <p>15.000 YER</p>
-        </div>
+        <!-- سيتم إضافة المنتجات ديناميكيًا من JS -->
       </div>
     </section>
 
@@ -147,13 +136,8 @@
       </div>
     </footer>
 
-    <!-- firebase JS -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script> -->
-
     <!-- JS  -->
-    <script type="module" src="./src/scripts/firebase.js"></script>
-    <script type="module" src="./src/scripts/home.js"></script>
-    <script type="module" src="./src/scripts/script.js"></script>
+    <script type="module" src="./scripts/script.js"></script>
+    <script type="module" src="./scripts/home.js"></script>
   </body>
 </html>

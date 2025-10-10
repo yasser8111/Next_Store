@@ -1,0 +1,104 @@
+/* ===== Login/Register Section ===== */
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+.auth-card {
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.auth-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.auth-tabs div {
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+}
+
+.auth-tabs .active {
+  border-color: #000000;
+}
+
+.form-container {
+  display: none;
+  text-align: right;
+}
+
+.form-container.active {
+  display: block;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #000000;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.auth-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.auth-text a {
+  color: #0a3d62;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-text a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسجيل الدخول / إنشاء حساب - Next Store</title>
+    <link rel="icon" type="image/x-icon" href="./public/img/logo.webp" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/login.css">
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar top">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li style="--i: 4"><a href="#contact">اتصل بنا</a></li>
+          <li style="--i: 3"><a href="../index.html#about">من نحن</a></li>
+          <li style="--i: 2"><a href="../index.html#products">تيشيرتات</a></li>
+          <li style="--i: 1"><a href="../index.html#">الرئيسية</a></li>
+        </ul>
+
+        <button class="nav-toggle" aria-label="فتح القائمة">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <div class="logo">
+          <img
+            src="../img/logo.webp"
+            alt="Logo"
+            onclick="window.location.href='../index.html#'"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Login/Register Section -->
+    <section class="auth-section container">
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <div class="tab active" data-target="login-form">تسجيل الدخول</div>
+          <div class="tab" data-target="register-form">إنشاء حساب</div>
+        </div>
+
+        <!-- ===== Login Form ===== -->
+        <div id="login-form" class="form-container active">
+          <form>
+            <div class="input-group">
+              <label for="login-email">البريد الإلكتروني</label>
+              <input type="email" id="login-email" placeholder="example@nextstore.com" required />
+            </div>
+            <div class="input-group">
+              <label for="login-password">كلمة المرور</label>
+              <input type="password" id="login-password" placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="btn">تسجيل الدخول</button>
+            <p class="auth-text">
+              ليس لديك حساب؟ <a href="#" class="switch-tab" data-target="register-form">إنشاء حساب</a>
+            </p>
+          </form>
+        </div>
+
+        <!-- ===== Register Form ===== -->
+        <div id="register-form" class="form-container">
+          <form>
+            <div class="input-group">
+              <label for="name">الاسم الكامل</label>
+              <input type="text" id="name" placeholder="أدخل اسمك" required />
+            </div>
+            <div class="input-group">
+              <label for="email">البريد الإلكتروني</label>
+              <input type="email" id="email" placeholder="example@nextstore.com" required />
+            </div>
+            <div class="input-group">
+              <label for="password">كلمة المرور</label>
+              <input type="password" id="password" placeholder="••••••••" required />
+            </div>
+            <div class="input-group">
+              <label for="confirm-password">تأكيد كلمة المرور</label>
+              <input type="password" id="confirm-password" placeholder="••••••••" required />
+            </div>
+            <button type="submit" class="btn">إنشاء الحساب</button>
+            <p class="auth-text">
+              لديك حساب بالفعل؟ <a href="#" class="switch-tab" data-target="login-form">تسجيل الدخول</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container container">
+        <div class="footer-col">
+          <h3>متجر نكست</h3>
+          <p>
+            نقدّم لك أفضل خامات القطن مع تصاميم عصرية لتجمع بين الراحة والأناقة.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="../index.html#">الرئيسية</a></li>
+            <li><a href="../index.html#products">تيشيرتات</a></li>
+            <li><a href="../index.html#about">من نحن</a></li>
+            <li><a href="./terms.html">الأحكام والشروط</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>تواصل معنا</h4>
+          <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
+          <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
+        </div>
+        <div class="footer-col">
+          <h4>تابعنا</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script type="module" src="../scripts/script.js"></script>
+    <script type="module" src="../scripts/login.js"></script>
+  </body>
+</html>

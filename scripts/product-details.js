@@ -1,4 +1,11 @@
-import { db, collection, getDocs } from "../../backend/firebase.js";
+import { initFirebase } from "./firebase.js";
+import {
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+
+// تهيئة Firebase
+const { db } = await initFirebase();
 
 document.addEventListener("DOMContentLoaded", async () => {
   // ===== DOM container =====

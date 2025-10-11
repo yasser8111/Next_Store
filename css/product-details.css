@@ -156,52 +156,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-#warning-message {
-  position: fixed;
-  top: 0px;
-  left: 40%;
-  z-index: 9999;
-
-  opacity: 0;
-  visibility: hidden;
-
-  background: #ffe0e0;
-  border: 1px solid #ff4d4d;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  color: red;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-  transition: all 0.3s ease;
-}
-
-#warning-message.active {
-  top: 20px;
-  opacity: 1;
-  visibility: visible;
-}
-
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  20%,
-  60% {
-    transform: translateX(-8px);
-  }
-  40%,
-  80% {
-    transform: translateX(8px);
-  }
-}
-
-#warning-message.shake {
-  animation: shake 0.5s;
-}
-
 .product-swiper {
   width: 100%;
   max-width: clamp(200px, 40vw, 500px);

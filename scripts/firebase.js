@@ -8,7 +8,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
-✅ إعدادات Firebase الخاصة بك
+// ✅ إعدادات Firebase الخاصة بك
 const firebaseConfig = {
   apiKey: "AIzaSyBoXoSi376ZtbrIDc0Oa4_yf8-tJKcHV-4",
   authDomain: "database-nextstore.firebaseapp.com",

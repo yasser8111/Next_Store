@@ -288,7 +288,7 @@ a {
   font-weight: bold;
   color: #000000;
   font-size: 1.1rem;
-  direction: ltr;
+  direction: rtl;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

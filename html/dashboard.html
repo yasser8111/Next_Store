@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة التحكم - Next Store</title>
+    <link rel="icon" type="image/x-icon" href="../img/logo.webp" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar top">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li style="--i: 4"><a href="#contact">اتصل بنا</a></li>
+          <li style="--i: 3"><a href="../index.html#about">من نحن</a></li>
+          <li style="--i: 2"><a href="../index.html#products">تيشيرتات</a></li>
+          <li style="--i: 1"><a href="../index.html#">الرئيسية</a></li>
+        </ul>
+
+        <button class="nav-toggle" aria-label="فتح القائمة">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <div class="logo">
+          <img
+            src="../img/logo.webp"
+            alt="Logo"
+            onclick="window.location.href='../index.html#'"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+      <div class="dashboard-header">
+        <h1>لوحة التحكم - المنتجات</h1>
+        <button class="add-product-btn" onclick="openAddModal()">
+          <i class="fas fa-plus"></i>
+          إضافة منتج جديد
+        </button>
+      </div>
+
+      <div id="loading" class="loading-container">
+        <div class="loading-spinner"></div>
+        <p>جاري تحميل المنتجات...</p>
+      </div>
+
+      <div id="productList" class="product-grid"></div>
+    </section>
+
+    <!-- Add/Edit Modal -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle">إضافة منتج جديد</h2>
+          <button class="close-modal" onclick="closeModal()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="productForm">
+            <input type="hidden" id="productId" />
+
+            <div class="form-group">
+              <label>اسم المنتج</label>
+              <input type="text" id="productName" required />
+            </div>
+
+            <div class="form-group">
+              <label>الوصف</label>
+              <textarea id="productDescription" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>السعر</label>
+              <input type="number" id="productPrice" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+              <label>العملة</label>
+              <select id="productCurrency">
+                <option value="SAR">ريال سعودي (SAR)</option>
+                <option value="USD">دولار (USD)</option>
+                <option value="EUR">يورو (EUR)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>المقاسات المتاحة</label>
+              <div class="size-selector">
+                <label class="size-checkbox">
+                  <input type="checkbox" name="sizes" value="S" />
+                  <span>S</span>
+                </label>
+                <label class="size-checkbox">
+                  <input type="checkbox" name="sizes" value="M" />
+                  <span>M</span>
+                </label>
+                <label class="size-checkbox">
+                  <input type="checkbox" name="sizes" value="L" />
+                  <span>L</span>
+                </label>
+                <label class="size-checkbox">
+                  <input type="checkbox" name="sizes" value="XL" />
+                  <span>XL</span>
+                </label>
+                <label class="size-checkbox">
+                  <input type="checkbox" name="sizes" value="XXL" />
+                  <span>XXL</span>
+                </label>
+                <label class="size-checkbox">
+                  <input type="checkbox" name="sizes" value="XXXL" />
+                  <span>XXXL</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>روابط الصور (افصل بينها بفاصلة)</label>
+              <textarea
+                id="productImages"
+                placeholder="v1234567890/image1, v1234567890/image2"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>المواصفات</label>
+              <div class="specs-container" id="specsContainer"></div>
+              <button
+                type="button"
+                class="add-spec-btn"
+                onclick="addSpecField()"
+              >
+                <i class="fas fa-plus"></i> إضافة مواصفة
+              </button>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="closeModal()"
+              >
+                إلغاء
+              </button>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i>
+                حفظ
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>متجر نكست</h3>
+          <p>
+            نقدّم لك أفضل خامات القطن مع تصاميم عصرية لتجمع بين الراحة والأناقة.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="../index.html#">الرئيسية</a></li>
+            <li><a href="../index.html#products">تيشيرتات</a></li>
+            <li><a href="../index.html#about">من نحن</a></li>
+            <li><a href="./terms.html">الأحكام والشروط</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>تواصل معنا</h4>
+          <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
+          <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
+        </div>
+        <div class="footer-col">
+          <h4>تابعنا</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script type="module" src="../scripts/script.js"></script>
+    <script type="module" src="../scripts/dashboard.js"></script>
+  </body>
+</html>

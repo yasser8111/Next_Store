@@ -8,25 +8,15 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
-// ✅ إعدادات Firebase الخاصة بك
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBoXoSi376ZtbrIDc0Oa4_yf8-tJKcHV-4",
-//   authDomain: "database-nextstore.firebaseapp.com",
-//   projectId: "database-nextstore",
-//   storageBucket: "database-nextstore.appspot.com",
-//   messagingSenderId: "463214736059",
-//   appId: "1:463214736059:web:d882da8f1e06968eedef9e",
-//   measurementId: "G-M6M6KZ1W74",
-// };
-
+✅ إعدادات Firebase الخاصة بك
 const firebaseConfig = {
-  apiKey: prossscess.env.FIREBASE_API_KEY,,
-  authDomain: prossscess.env.FIREBASE_AUTH_DOMAIN,,
+  apiKey: "AIzaSyBoXoSi376ZtbrIDc0Oa4_yf8-tJKcHV-4",
+  authDomain: "database-nextstore.firebaseapp.com",
   projectId: "database-nextstore",
-  storageBucket: prossscess.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: prossscess.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: prossscess.env.FIREBASE_APP_ID,
-  measurementId: prossscess.env.FIREBASE_MEASUREMENT_ID,
+  storageBucket: "database-nextstore.appspot.com",
+  messagingSenderId: "463214736059",
+  appId: "1:463214736059:web:d882da8f1e06968eedef9e",
+  measurementId: "G-M6M6KZ1W74",
 };
 
 // ✅ تهيئة Firebase

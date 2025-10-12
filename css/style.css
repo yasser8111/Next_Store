@@ -259,6 +259,7 @@ a {
   border: 1px solid #f0f0f0;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  max-width: 250px;
 }
 
 .Customize-card {

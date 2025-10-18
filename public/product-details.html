@@ -6,17 +6,17 @@
     <title>تفاصيل المنتج - Next Store</title>
     <link rel="icon" type="image/x-icon" href="../img/logo.webp" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/product-details.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="./css/product-details.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
-    <!-- Font Awesome CSS -->
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- SWIPER CSS -->
+    <!-- Swiper CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -27,23 +27,30 @@
     <nav id="navbar" class="navbar top">
       <div class="nav-container">
         <ul class="nav-menu">
+          <li class="cart-linke"><a href="./cart.html">السله</a></li>
           <li style="--i: 4"><a href="#contact">اتصل بنا</a></li>
-          <li style="--i: 3"><a href="../index.html#about">من نحن</a></li>
-          <li style="--i: 2"><a href="../index.html#products">تيشيرتات</a></li>
-          <li style="--i: 1"><a href="../index.html#">الرئيسية</a></li>
+          <li style="--i: 3"><a href="./index.html#about">من نحن</a></li>
+          <li style="--i: 2"><a href="./index.html#products">تيشيرتات</a></li>
+          <li style="--i: 1"><a href="./index.html#home">الرئيسية</a></li>
         </ul>
 
-        <button class="nav-toggle" aria-label="فتح القائمة">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+        <div class="btns">
+          <button class="nav-toggle" aria-label="فتح القائمة">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <a href="./cart.html" class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
 
         <div class="logo">
           <img
-            src="../img/logo.webp"
+            src="./img/logo.webp"
             alt="Logo"
-            onclick="window.location.href='../index.html#'"
+            onclick="window.location.href='#'"
           />
         </div>
       </div>
@@ -51,16 +58,16 @@
 
     <!-- Product Details Section -->
     <section class="product-details container">
-      <div id="warning-message">الرجاء اختيار المقاس واللون أولاً</div>
+      <div id="message"></div>
 
-      <!-- الصور -->
+      <!-- Product Images -->
       <div class="img-con">
         <div class="swiper product-swiper">
           <div class="swiper-wrapper">
-            <!-- سيتم إضافة الصور ديناميكيًا من JS -->
+            <!-- Images will be loaded dynamically from JavaScript -->
           </div>
 
-          <!-- الأسهم -->
+          <!-- Navigation Arrows -->
           <div class="swiper-button-prev">
             <i class="fa-solid fa-caret-right"></i>
           </div>
@@ -68,17 +75,17 @@
             <i class="fa-solid fa-caret-left"></i>
           </div>
 
-          <!-- Pagination -->
+          <!-- Pagination Dots -->
           <div class="swiper-pagination"></div>
         </div>
       </div>
 
-      <!-- معلومات المنتج -->
+      <!-- Product Information -->
       <div class="product-info">
         <h1>اسم المنتج</h1>
         <p>وصف المنتج</p>
 
-        <!-- المقاسات -->
+        <!-- Size Selection -->
         <div class="options">
           <label>اختر المقاس:</label>
           <div class="size-options">
@@ -91,11 +98,11 @@
           </div>
         </div>
 
-        <!-- الألوان -->
+        <!-- Color Selection -->
         <div class="options">
           <label>اختر اللون:</label>
           <div class="color-options">
-            <!-- سيتم إضافة أزرار الألوان ديناميكيًا -->
+            <!-- Color buttons will be loaded dynamically -->
           </div>
         </div>
 
@@ -105,16 +112,17 @@
           اطلب عبر واتساب
         </a>
 
+        <!-- Product Specifications -->
         <div class="product-specs">
           <h3>تفاصيل المنتج:</h3>
           <ul>
-            <!-- سيتم إضافة تفاصيل/specs ديناميكيًا -->
+            <!-- Specifications will be loaded dynamically -->
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer id="contact" class="footer">
       <div class="footer-container">
         <div class="footer-col">
@@ -123,6 +131,7 @@
             نقدّم لك أفضل خامات القطن مع تصاميم عصرية لتجمع بين الراحة والأناقة.
           </p>
         </div>
+
         <div class="footer-col">
           <h4>روابط سريعة</h4>
           <ul>
@@ -132,11 +141,13 @@
             <li><a href="./terms.html">الأحكام والشروط</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
           <h4>تواصل معنا</h4>
           <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
           <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
         </div>
+
         <div class="footer-col">
           <h4>تابعنا</h4>
           <div class="social-icons">
@@ -146,12 +157,13 @@
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
       </div>
     </footer>
 
-    <!-- JS -->
+    <!-- JavaScript Files -->
     <script type="module" src="../scripts/product-details.js"></script>
     <script type="module" src="../scripts/script.js"></script>
 

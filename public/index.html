@@ -6,12 +6,12 @@
     <title>Next Store - متجر نكست</title>
     <link rel="icon" type="image/x-icon" href="./img/logo.webp" />
 
-    <!-- CSS  -->
+    <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/home.css" />
     <link rel="stylesheet" href="./css/product-details.css" />
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -22,17 +22,24 @@
     <nav id="navbar" class="navbar top">
       <div class="nav-container">
         <ul class="nav-menu">
+          <li class="cart-linke"><a href="./cart.html">السله</a></li>
           <li style="--i: 4"><a href="#contact">اتصل بنا</a></li>
-          <li style="--i: 3"><a href="#about">من نحن</a></li>
-          <li style="--i: 2"><a href="#products">تيشيرتات</a></li>
-          <li style="--i: 1"><a href="#">الرئيسية</a></li>
+          <li style="--i: 3"><a href="./index.html#about">من نحن</a></li>
+          <li style="--i: 2"><a href="./index.html#products">تيشيرتات</a></li>
+          <li style="--i: 1"><a href="./index.html#home">الرئيسية</a></li>
         </ul>
 
-        <button class="nav-toggle" aria-label="فتح القائمة">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+        <div class="btns">
+          <button class="nav-toggle" aria-label="فتح القائمة">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <a href="./cart.html" class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
 
         <div class="logo">
           <img
@@ -46,18 +53,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero container">
-      <img
-        src="./img/hero.webp"
-        class="hero-img"
-        alt=""
-        loading="lazy"
-      />
-      <img
-        src="./img/hero_2.webp"
-        class="hero-img-2"
-        alt=""
-        loading="lazy"
-      />
+      <img src="./img/hero.webp" class="hero-img" alt="" loading="lazy" />
+      <img src="./img/hero_2.webp" class="hero-img-2" alt="" loading="lazy" />
       <a href="#products" class="btn">صمّم تيشيرتك... بطريقتك!</a>
 
       <a href="#products" class="scroll-down">
@@ -68,18 +65,20 @@
     <!-- Products Section -->
     <section id="products" class="products container">
       <!-- <h2>عرض الافتتاح!</h2>
-      <p>
-        خذ 2 تيشيرتات وواحد مجاناً بمناسبة افتتاح متجر نكست. اغتنم الفرصة الآن!
-      </p> -->
+        <p>
+            خذ 2 تيشيرتات وواحد مجاناً بمناسبة افتتاح متجر نكست. اغتنم الفرصة الآن!
+        </p> -->
 
       <hr />
 
+      <!-- Loading State -->
       <div class="loading-container" id="loading-container">
         <div class="loading-spinner"></div>
       </div>
 
+      <!-- Products Grid -->
       <div class="product-grid">
-        <!-- سيتم إضافة المنتجات ديناميكيًا من JS -->
+        <!-- Products will be loaded dynamically from JavaScript -->
       </div>
     </section>
 
@@ -92,7 +91,7 @@
       </p>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer id="contact" class="footer">
       <div class="footer-container container">
         <div class="footer-col">
@@ -105,17 +104,20 @@
         <div class="footer-col">
           <h4>روابط سريعة</h4>
           <ul>
+            <li><a href="./cart">السله</a></li>
             <li><a href="index.html#">الرئيسية</a></li>
             <li><a href="index.html#products">تيشيرتات</a></li>
             <li><a href="index.html#about">من نحن</a></li>
-            <li><a href="./html/terms.html">الأحكام والشروط</a></li>
+            <li><a href="./terms.html">الأحكام والشروط</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
           <h4>تواصل معنا</h4>
           <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
           <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
         </div>
+
         <div class="footer-col">
           <h4>تابعنا</h4>
           <div class="social-icons">
@@ -131,12 +133,13 @@
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
       </div>
     </footer>
 
-    <!-- JS  -->
+    <!-- JavaScript Files -->
     <script type="module" src="./scripts/script.js"></script>
     <script type="module" src="./scripts/home.js"></script>
   </body>

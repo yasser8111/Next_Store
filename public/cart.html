@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>السلة - Next Store</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/cart.css">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar top">
+      <div class="nav-container">
+        <ul class="nav-menu">
+          <li class="cart-linke"><a href="./cart.html">السله</a></li>
+          <li style="--i: 4"><a href="#contact">اتصل بنا</a></li>
+          <li style="--i: 3"><a href="./index.html#about">من نحن</a></li>
+          <li style="--i: 2"><a href="./index.html#products">تيشيرتات</a></li>
+          <li style="--i: 1"><a href="./index.html#home">الرئيسية</a></li>
+        </ul>
+
+        <div class="btns">
+          <button class="nav-toggle" aria-label="فتح القائمة">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <a href="./cart.html" class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+
+        <div class="logo">
+          <img
+            src="./img/logo.webp"
+            alt="Logo"
+            onclick="window.location.href='#'"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <section class="cart-section container">
+      <div id="message"></div>
+      <h1 class="cart-title">سلة التسوق</h1>
+
+      <div id="cart-container">
+        <!-- Cart items will be loaded here dynamically -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container container">
+        <div class="footer-col">
+          <h3>متجر نكست</h3>
+          <p>
+            نقدّم لك أفضل خامات القطن مع تصاميم عصرية لتجمع بين الراحة والأناقة.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="./">السلة</a></li>
+            <li><a href="./index.html">الرئيسية</a></li>
+            <li><a href="./index.html#products">تيشيرتات</a></li>
+            <li><a href="./index.html#about">من نحن</a></li>
+            <li><a href="./terms.html">الأحكام والشروط</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>تواصل معنا</h4>
+          <p><i class="fa-solid fa-envelope"></i> hello@nextstore.com</p>
+          <p><i class="fa-solid fa-phone"></i> +966 50 000 0000</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>تابعنا</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Next Store. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/cart.js"></script>
+
+  </body>
+</html>

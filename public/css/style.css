@@ -1,4 +1,4 @@
-/* General Reset & Base Styles */
+/* ===== GENERAL RESET & BASE STYLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +9,8 @@
 }
 
 body {
-  background-color: #ffffff; /* أبيض نقي */
-  color: #000000; /* أسود للنصوص */
+  background-color: #ffffff; /* Pure white */
+  color: #000000; /* Black for text */
   line-height: 1.6;
 }
 
@@ -19,12 +19,18 @@ a {
   color: inherit;
 }
 
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Navbar */
+/* ===== NAVBAR STYLES ===== */
 .navbar {
   background-color: rgba(255, 255, 255, 0.5) !important;
   backdrop-filter: blur(10px) !important;
@@ -51,8 +57,8 @@ a {
 }
 
 .logo img {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 50px;
   transition: 0.3s ease;
   cursor: pointer;
 }
@@ -68,7 +74,29 @@ a {
   color: #000000;
   transition: color 0.3s;
 }
-/* زر الهامبرغر */
+
+/* Cart Button */
+.cart-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.cart-btn i {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Hamburger Menu Toggle */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -101,21 +129,11 @@ a {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* القائمة متخفية افتراضياً */
+/* Menu Animation States */
 .nav-menu {
   display: flex;
   gap: 1.8rem;
   list-style: none;
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.3s ease;
-}
-
-/* أنيميشن للقائمة */
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 1.8rem;
   opacity: 1;
   transform: translateY(0);
   transition: none;
@@ -127,10 +145,9 @@ a {
   display: flex;
 }
 
-/* Hero Section */
+/* ===== HERO SECTION ===== */
 .hero {
   height: calc(100vh - 88px);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,7 +181,6 @@ a {
   left: 0;
   top: -63%;
   transform: none;
-
   display: inline-block;
   background-color: #fff;
   color: #000;
@@ -188,7 +204,7 @@ a {
   display: inline-block;
   margin-top: 20px;
   font-size: 2rem;
-  color: #000; /* أزرق */
+  color: #000;
   animation: bounce 1.5s infinite;
   cursor: pointer;
   scale: 1;
@@ -215,7 +231,7 @@ a {
   }
 }
 
-/* Products Section */
+/* ===== PRODUCTS SECTION ===== */
 .products {
   padding: 3rem 2rem;
   text-align: center;
@@ -294,7 +310,7 @@ a {
   text-overflow: ellipsis;
 }
 
-/* About Section */
+/* ===== ABOUT SECTION ===== */
 .about {
   padding: 4rem 2rem;
   background-color: #fafafa;
@@ -316,7 +332,7 @@ a {
   color: #444444;
 }
 
-/* Footer */
+/* ===== FOOTER STYLES ===== */
 .footer {
   background-color: #000000;
   color: #ffffff;
@@ -372,6 +388,7 @@ a {
   font-size: 0.95rem;
 }
 
+/* ===== TERMS & CONDITIONS ===== */
 .terms {
   padding: 3rem 1.5rem;
   width: 90%;
@@ -408,6 +425,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+/* ===== LOADING STATES ===== */
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -426,31 +444,46 @@ a {
   animation: spin 1s linear infinite;
 }
 
-#warning-message {
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== MESSAGE NOTIFICATIONS ===== */
+#message {
   position: fixed;
   top: 0px;
   left: 50%;
-  z-index: 9999;
+  z-index: 9;
   transform: translateX(-50%) translateY(-50%);
   opacity: 0;
   visibility: hidden;
-
-  background: #ffe0e0;
-  border: 1px solid #ff4d4d;
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
   font-size: 0.95rem;
-  color: red;
   font-weight: bold;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
+  color: #fff;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
-#warning-message.active {
-  top: 30px;
+#message.active {
+  top: 100px;
   opacity: 1;
   visibility: visible;
+}
+
+#message.warning {
+  background: #ff4d4d;
+}
+
+#message.success {
+  background: rgb(8, 185, 8);
 }
 
 @keyframes shake {
@@ -468,34 +501,32 @@ a {
   }
 }
 
-#warning-message.shake {
+#message.shake {
   animation: shake 0.5s;
 }
 
+/* ===== RESPONSIVE DESIGN ===== */
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Responsive Design */
+/* Mobile - 540px and below */
 @media (max-width: 540px) {
   .logo img {
-    width: 50px;
-    margin-top: 5px;
+    height: 40px;
   }
 
   .nav-toggle {
     display: flex;
   }
 
+  .cart-btn {
+    display: flex;
+  }
+
+  .cart-linke {
+    display: none;
+  }
+
   .nav-menu {
     width: 200px;
-
     position: absolute;
     top: 70px;
     right: 10px;
@@ -503,7 +534,7 @@ a {
     flex-direction: column-reverse;
     gap: 1rem;
     background-color: #ffffff;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     opacity: 0;
@@ -654,46 +685,61 @@ a {
     margin-bottom: 1rem;
     font-size: 1.7rem;
   }
+
+  #message {
+    width: calc(100vw - 20px);
+  }
 }
 
+/* Small Mobile - 425px and below */
 @media (max-width: 425px) {
   .nav-container {
     padding: 0.5rem 1rem;
   }
+
   .hero {
     height: calc(60vh - 88px);
   }
+
   .hero .btn {
     top: -65%;
   }
+
   .hero img.hero-img-2 {
     margin-top: 30px;
   }
+
   .products {
     padding: 1.2rem 0.5rem;
   }
+
   .products h2 {
     font-size: 1rem;
     margin-bottom: 0.9rem;
   }
+
   .product-grid {
     gap: 1rem;
   }
+
   .about {
     padding: 2rem 1rem;
   }
+
   .about h2 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
   }
+
   .footer {
     margin-top: 1rem;
-    padding: 1rem 0.5rem 0.5rem;
   }
+
   .footer-col h3,
   .footer-col h4 {
     font-size: 0.9rem;
   }
+
   .footer-col p,
   .footer-col ul {
     font-size: 0.75rem;
@@ -718,6 +764,7 @@ a {
   }
 }
 
+/* Desktop - 1200px and above */
 @media (min-width: 1200px) {
   .hero img.hero-img-2 {
     display: none;
@@ -733,7 +780,6 @@ a {
     position: absolute;
     top: calc(52% + 100px);
     left: 140px;
-
     display: inline-block;
     background-color: #000000;
     color: #ffffff;
@@ -754,4 +800,22 @@ a {
     transform: translateY(-5px) rotate(-2deg) scale(1.01);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   }
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff0000;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 10;
+  animation: popIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
